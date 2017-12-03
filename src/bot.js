@@ -12,7 +12,7 @@ function createChaos() {
     });
 
     return nightmare
-        .goto('http://localhost:3000')
+        .goto('https://chaos-notepad.herokuapp.com')
         .wait('input#username-input')
         .type('input#username-input', rand.randomChaosMonkey())
         .click('button#connect-btn')
