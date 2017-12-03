@@ -1,14 +1,14 @@
 {
   "name": "chaos_monkey",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "bot to load test multi users editing editor quill",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "test": "node src/test.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["chaos", "monkey"],
+  "author": "jusan.ng",
   "license": "ISC",
   "dependencies": {
     "async": "^2.6.0",

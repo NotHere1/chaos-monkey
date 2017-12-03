@@ -3,7 +3,6 @@
 binaries: `git`, `docker`, `heroku` 
 dependencies: remote or local `mongodn`
 
-
 ### Heroku Deployment Commands
 
 1. clones the chaos monkey repo
@@ -30,7 +29,7 @@ heroku apps:create --region [tokyo|us|eu]
 5. sets heroku config vars
 ```sh
 # default `http://localhost:3000`
-heroku config:set EDITOR_URL=[heroku's chaos-notepad url]
+heroku config:set EDITOR_URL=[heroku's hosted editor url]
 ```
 
 6. logins to heroku's docker repository
@@ -45,11 +44,14 @@ heroku container:push worker
 
 8. wrech havocs
 ```sh
+# if you have the money ~ try -> worker=100 
+# that's 400 monkeys vs. your editor
 heroku ps:scale worker=[# of monkey = worker number * 4]
 ```
 
 9. checks the editor
 
+---
 
 ### Local Deployment Commands
 
@@ -64,4 +66,11 @@ cd chaos-monkey
 docker build -t chaos-monkey:latest .
 ```
 
-3. 
+3. runs the bot against the editor
+```sh
+# if editor is hosted locally
+docker run --network=host -it chaos-monkey:latest
+
+# if editor is hosted remotely in heroku
+docker run --network=host -e EDITOR_URL='heroku url' -it chaos-monkey:latest
+```

@@ -3,16 +3,19 @@ const   rand = require('./random'),
         async = require('async'),
         Nightmare = require('nightmare');
 
-function createChaos(editorUrl) {
+
+let chaosEditorUrl = process.env.EDITOR_URL || 'http://localhost:3000'
+
+function createChaos() {
 
     let nightmare = Nightmare({
         show: false,
-        waitTimeout: 600000, // 10 minutes
-        typeInterval: 200
+        waitTimeout: 1000000, // 15 minutes
+        typeInterval: 400
     });
 
     return nightmare
-        .goto(editorUrl)
+        .goto(chaosEditorUrl)
         .wait('input#username-input')
         .type('input#username-input', rand.randomChaosMonkey())
         .click('button#connect-btn')
