@@ -19,7 +19,8 @@ module.exports.chaosAction = function() {
             action = rw.randomWord();
             break;
         case 4:
-            action = rw.randomIntInclusive(0, 9).toString();
+        case 10:
+            action = _.toString(rw.randomIntInclusive(0, 9));
             break;
         case 5:
             action = rw.sillyName();
@@ -38,8 +39,6 @@ module.exports.chaosAction = function() {
         case 20:
             action = kw['delete'].repeat(rw.randomIntInclusive(1,10));
             break;
-
-        case 10:
         case 11:
         case 14:
         case 15:

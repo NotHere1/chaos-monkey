@@ -3,7 +3,7 @@ const   rand = require('./random'),
         async = require('async'),
         Nightmare = require('nightmare');
 
-function createChaos() {
+function createChaos(editorUrl) {
 
     let nightmare = Nightmare({
         show: false,
@@ -12,7 +12,7 @@ function createChaos() {
     });
 
     return nightmare
-        .goto('https://chaos-notepad.herokuapp.com')
+        .goto(editorUrl)
         .wait('input#username-input')
         .type('input#username-input', rand.randomChaosMonkey())
         .click('button#connect-btn')
