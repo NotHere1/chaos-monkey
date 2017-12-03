@@ -340,9 +340,17 @@ module.exports.run = () => {
              console.error(err);
              callback(err);
          })
+        },
+        function(callback) {
+         createChaos()
+         .end()
+         .catch((err) =>{
+             console.error(err);
+             callback(err);
+         })
         }
     ],
-    1,
+    2,
     function(err, results) {
         if (err) {
          console.error(`err: ${err}`);
