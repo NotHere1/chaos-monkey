@@ -1,0 +1,24 @@
+{
+  "name": "chaos_monkey",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "node src/test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.6.0",
+    "lodash": "^4.17.4",
+    "nightmare": "^2.10.0",
+    "random-name": "^0.1.2",
+    "random-words": "0.0.1",
+    "sillyname": "^0.1.0"
+  },
+  "devDependencies": {
+    "webpack": "^3.9.1"
+  }
+}
