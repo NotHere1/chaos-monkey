@@ -1,3 +1,13 @@
+-- how to run more than 1 monkeys locally ?
+
+```
+# parallel strategy
+# how many core does your machine has ?
+# use GNU parallel to dispatch jobs to each of your available cores
+# 150% means 1.5 jobs for each core
+parallel -j150% node app.js ::: 1 2
+```
+
 -- So how can i can 100 or even 1000 monkeys with this ?
 
 I am bounded by the physical capacity of my 4 cores computer. Maxed out at 150% cpu, the most I can do is 6 cpu before OS context switches negate any further performance gains.
