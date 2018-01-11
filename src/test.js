@@ -24,7 +24,7 @@ nightmare
 			var user = users[i]
 			if (user.innerText.includes('You')) { return user.innerText; }
 		}
-		return 'fuxk';
+		return 'opps';
 	})
 	.click('div.ql-editor')
 	// .type('div.ql-editor', randomWord())
